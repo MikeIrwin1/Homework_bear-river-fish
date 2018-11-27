@@ -1,11 +1,12 @@
 class Bear
 
-  attr_reader :name, :type, :stomach
+  attr_reader :name, :type, :stomach, :count
 
   def initialize(name, type)
     @name = name
     @type = type
     @stomach = []
+    @count = 0
   end
 
   def eat(fish_object, river)
@@ -15,6 +16,7 @@ class Bear
         river.fish.delete(individual_fish)
       end
     end
+    return @count += 1
   end
 
 end
